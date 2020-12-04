@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../css/Employee_Payroll.css">
     <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -73,7 +74,7 @@
             <div class="row-content">
                 <label class="label text" for="salary">Salary</label>
                 <input class="input" type="range" name="salary" id="salary" max="500000" min="300000" step="100" value=400000>
-                <output class="Salary-output text" for="salary">400000</output>
+                <output class="Salary-output text" id="salary-output" for="salary">400000</output>
             </div>
             <div class="row-content">
                 <label class="label text" for="startdate">Start Date</label>
@@ -147,6 +148,14 @@
             </div>
         </form>
     </div>
+    <script>
+        const salary = document.getElementById("salary");
+        const output = document.getElementById("salary-output");
+        output.innerHTML = salary.value;
+        salary.oninput = function () {
+            output.innerHTML = this.value;
+        }
+    </script>
 </body>
 
 </html>
