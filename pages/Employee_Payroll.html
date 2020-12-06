@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <title>Employee Payroll Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../css/Employee_Payroll.css">
     <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <title>Employee Payroll Form</title>
 </head>
 
 <body>
@@ -78,7 +77,7 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="startdate">Start Date</label>
-                <div>
+                <div id="starDate">
                     <select id="day" name="Day">
                        <option value="1">1</option>
                        <option value="2">2</option>
@@ -113,26 +112,26 @@
                        <option value="31">31</option>
                    </select>
                     <select id="month" name="Month">
-                    <option value="jan">January</option>
-                    <option value="feb">Febuary</option>
-                    <option value="mar">March</option>
-                    <option value="apr">April</option>
-                    <option value="may">May</option>
-                    <option value="june">June</option>
-                    <option value="july">July</option>
-                    <option value="aug">August</option>
-                    <option value="sep">September</option>
-                    <option value="oct">October</option>
-                    <option value="nov">November</option>
-                    <option value="dec">December</option>
-                </select>
+                        <option value="jan">January</option>
+                        <option value="feb">Febuary</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
                     <select id="year" name="Year">
-                    <option value="2020">2020</option>
-                    <option value="2019">2019</option>
-                    <option value="2018">2018</option>
-                    <option value="2017">2017</option>
-                    <option value="2016">2016</option>
-                </select>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                    </select>
                 </div>
             </div>
             <div class="row-content">
@@ -147,6 +146,7 @@
                 </div>
             </div>
         </form>
+        
     </div>
     <script>
         const salary = document.getElementById("salary");
@@ -156,7 +156,8 @@
             output.innerHTML = this.value;
         }
     </script>
+    <script src="../js/Employee_Payroll.js"></script>
+    <script src="../js/payroll_form.js"></script>
 </body>
-<script src="../js/Employee_Payroll.js"></script>
-<script src="../js/payroll_form.js"></script>
+
 </html>
