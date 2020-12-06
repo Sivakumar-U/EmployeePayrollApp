@@ -1,13 +1,12 @@
-class EmployeePayroll {
+class EmployeePayrollData {
+    
+    //getter and setter method
+    get id() { 
+        return this._id; 
+    }
 
-    constructor(...params) {
-        this.name = params[0];
-        this.picture = params[1];
-        this.gender = params[2];
-        this.department = params[3];
-        this.salary = params[4];
-        this.startDate = params[5];
-        this.notes = params[6];
+    set id(id) { 
+        this._id = id;
     }
 
     get name() {
@@ -15,7 +14,7 @@ class EmployeePayroll {
     }
 
     set name(name) {
-        let nameRegex=RegExp('^[A-Z]{1}[a-zA-Z]{2,}$');
+        let nameRegex=RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
         if(nameRegex.test(name))
             this._name=name;
         else throw ' Name is Incorrect ';
@@ -60,18 +59,18 @@ class EmployeePayroll {
         this._startDate = startDate;
     }
 
-    get notes() {
-        return this._notes;
+    get note() {
+        return this._note;
     }
 
-    set notes(notes) {
-        this._notes = notes;
+    set notes(note) {
+        this._note = note;
     }
 
     //method
     toString() {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefined" : this.startDate.toLocalDateString("en-US", options);
-        return name=" + this.name + ", gender=" + this.gender + ", picture=" + this.picture + ", department=" + this.department +", salary=" + this.salary + ", empDate=" + this.startDate + ", notes=" + this.notes";
+        return "id=" + this.id + ", name=" + this.name + ", gender=" + this.gender + ", picture=" + this.picture + ", department=" + this.department +", salary=" + this.salary + ", empDate=" + this.startDate + ", note=" + this.note;
     }
 }
