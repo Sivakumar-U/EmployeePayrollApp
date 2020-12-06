@@ -1,5 +1,5 @@
 class EmployeePayrollData {
-    
+
     //getter and setter method
     get id() { 
         return this._id; 
@@ -56,7 +56,9 @@ class EmployeePayrollData {
     }
 
     set startDate(startDate) {
-        this._startDate = startDate;
+        if (startDate<= new Date())
+            this._startDate = startDate;
+        else throw "Incorrect start date";
     }
 
     get note() {
